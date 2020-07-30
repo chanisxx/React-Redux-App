@@ -22,7 +22,7 @@ const WordSearch = props => {
 
     return (
         <div style={{paddingBottom: '15%'}}>
-        <div style={{padding: '25% 0'}}>
+        <div style={{padding: '25% 0 15% 0'}}>
             <input 
             class = 'input'
             placeholder = 'find a definition'

@@ -33,6 +33,13 @@
 }
 
 .type{
-  font-style:'italic';
-  font-weight: 'bold'
+  font-style: italic;
+  font-weight: bold
+}
+
+.fa-star{
+  position: relative;
+  left: 450px;
+  top: 45px;
+  cursor: pointer;
 }

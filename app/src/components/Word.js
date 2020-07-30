@@ -9,7 +9,9 @@ const Word = props => {
                 return (
                     props.wordResult[0] === word ?
                     <div style={{paddingBottom: '2%'}} key = {word.meta.id}>
+                       
                         <div className= 'main'>
+                        <i class="far fa-star"/>
                         <h1 className= 'main-header'>{word.hwi.hw}</h1>
                         <p style={{fontWeight: 'bold', fontStyle:'italic'}}>{word.fl}</p>
                         </div>
