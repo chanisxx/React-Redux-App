@@ -1,13 +1,15 @@
 import {
     FETCHING_DATA_SUCCESS,
     FETCHING_DATA_START,
-    FETCHING_DATA_ERROR
+    FETCHING_DATA_ERROR,
+    FAVORITE_WORD
 } from '../actions'
 
 const initialState = {
     wordResult: [],
     isFetching: false,
-    error: ''
+    error: '',
+    favoriteWord: []
 }
 
 export const reducer = (state = initialState, action) => {
@@ -30,6 +32,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: action.payload
+            }
+        }
+        case FAVORITE_WORD: {
+            return {
+                ...state,
+                favoriteWord: [...state.favoriteWord, action.payload]
             }
         }
 

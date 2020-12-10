@@ -19,3 +19,10 @@ export const fetchAllData = word => dispatch => {
     })
 
 };
+
+export const FAVORITE_WORD = 'FAVORITE_WORD';
+
+export const favoriteWord = word => {
+    
+    return {type: FAVORITE_WORD, payload: word};
+}

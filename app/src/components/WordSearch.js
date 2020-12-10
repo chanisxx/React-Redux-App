@@ -20,9 +20,14 @@ const WordSearch = props => {
         setSearchWord(e.target.value);
     }
 
+    const onSubmit = e => {
+        e.preventDefault();
+    }
+
     return (
         <div style={{paddingBottom: '15%'}}>
         <div style={{padding: '25% 0 15% 0'}}>
+            <form onSubmit={onSubmit}>
             <input 
             class = 'input'
             placeholder = 'find a definition'
@@ -32,7 +37,9 @@ const WordSearch = props => {
             name='searchWord'
             type='text'/>
 
-            <button style={{marginLeft: '2%', fontWeight: 'bold'}} class='button is-success' onClick = {() => props.fetchAllData(searchWord)}>Search</button>
+            <button style={{marginLeft: '2%', fontWeight: 'bold'}} class='button is-success' 
+            onClick = {() => props.fetchAllData(searchWord)}>Search</button>
+            </form>
 
         </div>
          <Word />
