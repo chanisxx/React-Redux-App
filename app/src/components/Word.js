@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { favoriteWord } from '../actions'
 
 const Word = props => {
     return (
@@ -8,10 +9,10 @@ const Word = props => {
             props.wordResult.map(word => {
                 return (
                     props.wordResult[0] === word ?
-                    <div style={{paddingBottom: '2%'}} key = {word.meta.id}>
+                    <div style={{paddingBottom: '2%'}} key = {word.meta.uuid}>
                        
                         <div className= 'main'>
-                        <i class="far fa-star"/>
+                        <i class="first far fa-star" onClick={()=>props.favoriteWord(word)}/>
                         <h1 className= 'main-header'>{word.hwi.hw}</h1>
                         <p style={{fontWeight: 'bold', fontStyle:'italic'}}>{word.fl}</p>
                         </div>
@@ -24,8 +25,9 @@ const Word = props => {
                         </div>
                     </div>
                     :
-                    <div style={{paddingBottom: '2%'}} key = {word.meta.id}>
+                    <div style={{paddingBottom: '2%'}} key = {word.meta.uuid}>
                         <div>
+                        <i class="second far fa-star" onClick={() => props.favoriteWord(word)}/>
                         <h1 className= 'secondary-header'>{word.hwi.hw}</h1>
                         <p style={{fontWeight: 'bold', fontStyle:'italic'}}>{word.fl}</p>
                         </div>
@@ -56,4 +58,4 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    {})(Word)
+    { favoriteWord })(Word)
